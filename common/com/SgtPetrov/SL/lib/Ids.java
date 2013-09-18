@@ -2,14 +2,14 @@ package com.SgtPetrov.SL.lib;
 
 public class Ids {
     
+    /* Default mob ids */
+    public static int FIRST_MOB_DEFAULT = 1;
+    
     /* Default block ids */
     public static int FIRST_BLOCK_DEFAULT = 1000;
     public static int GRAVITY_BLOCK_DEFAULT = 1001;
     public static int REDSTONE_GRAVITY_BLOCK_DEFAULT = 1002;
     public static int MULTI_TEXTURED_BLOCK_DEFAULT = 1003;
-    
-    /* Default mob ids */
-    public static int FIRST_MOB_DEFAULT = 3000;
     
     /* Default item ids */
     public static int FIRST_ITEM_DEFAULT = 4000;

@@ -2,6 +2,7 @@ package com.SgtPetrov.SL;
 
 import net.minecraft.creativetab.CreativeTabs;
 import com.SgtPetrov.SL.block.ModBlocks;
+import com.SgtPetrov.SL.client.model.ModMob;
 import com.SgtPetrov.SL.creativeTab.CreativeTabSL;
 import com.SgtPetrov.SL.item.ModItems;
 import com.SgtPetrov.SL.lib.Reference;
@@ -37,6 +38,8 @@ public class BaseFile {
         ModItems.init();
         
         ModRecipes.init();
+        
+        ModMob.init();
         
         LanguageRegistry.instance().addStringLocalization("itemGroup." + Strings.CREATIVE_TAB, "Self Learning");
     }

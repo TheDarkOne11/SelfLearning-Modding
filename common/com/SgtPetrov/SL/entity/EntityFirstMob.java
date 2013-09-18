@@ -35,7 +35,7 @@ public class EntityFirstMob extends EntityMob {
         return true;
     }
     
-    // Napø. díky tomuto zaène Zombie hoøeti
+    // Napø. díky tomuto zaène Zombie hoøet
     public void onLivingUpdate() {
         super.onLivingUpdate();
     }

@@ -1,10 +1,11 @@
-package com.SgtPetrov.SL.mob;
+package com.SgtPetrov.SL.client.model;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityEggInfo;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 
+import com.SgtPetrov.SL.client.renderer.RendererFirstMob;
 import com.SgtPetrov.SL.entity.EntityFirstMob;
 import com.SgtPetrov.SL.lib.Ids;
 import com.SgtPetrov.SL.lib.Strings;
@@ -24,6 +25,7 @@ public class ModMob {
         return startEntityId;
     }
     
+    @SuppressWarnings("unchecked")
     public static void registerEntityEgg(Class<? extends Entity> entity, int primaryColor, int secondaryColor) {
         int id = getUniqueEntityId();
         EntityList.IDtoClassMapping.put(id, entity);
@@ -38,6 +40,6 @@ public class ModMob {
         EntityRegistry.addSpawn(EntityFirstMob.class, 10, 2, 4, EnumCreatureType.monster);
         EntityRegistry.findGlobalUniqueEntityId();
         registerEntityEgg(EntityFirstMob.class, 0x3c768c, 0xb50000);
-        RenderingRegistry.registerEntityRenderingHandler(EntityFirstMob.class, new RenderFirstMob(new FirstMob(), 0,3F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityFirstMob.class, new RendererFirstMob(new ModelFirstMob(), 0.3F));
     }
 }
