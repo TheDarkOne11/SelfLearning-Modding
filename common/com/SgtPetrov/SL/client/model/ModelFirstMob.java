@@ -3,6 +3,7 @@ package com.SgtPetrov.SL.client.model;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.MathHelper;
 
 public class ModelFirstMob extends ModelBase
 {
@@ -11,8 +12,8 @@ public class ModelFirstMob extends ModelBase
     ModelRenderer Left_leg;
     ModelRenderer Right_leg;
     ModelRenderer Head;
-    ModelRenderer Right_Arm;
     ModelRenderer Left_Arm;
+    ModelRenderer Right_Arm;
   
   public ModelFirstMob()
   {
@@ -43,18 +44,18 @@ public class ModelFirstMob extends ModelBase
       Head.setTextureSize(64, 32);
       Head.mirror = true;
       setRotation(Head, 0F, 0F, 0F);
-      Right_Arm = new ModelRenderer(this, 0, 0);
-      Right_Arm.addBox(0F, -1.5F, -1.5F, 10, 3, 3);
-      Right_Arm.setRotationPoint(-4F, 6F, 2F);
-      Right_Arm.setTextureSize(64, 32);
-      Right_Arm.mirror = true;
-      setRotation(Right_Arm, 0F, 0F, 2.621101F);
       Left_Arm = new ModelRenderer(this, 0, 0);
-      Left_Arm.addBox(0F, -1.5F, -1.5F, 10, 3, 3);
-      Left_Arm.setRotationPoint(5F, 6F, 2F);
+      Left_Arm.addBox(0F, -1.5F, -1.5F, 3, 10, 3);
+      Left_Arm.setRotationPoint(5F, 5.466667F, 2F);
       Left_Arm.setTextureSize(64, 32);
       Left_Arm.mirror = true;
-      setRotation(Left_Arm, 0F, 0F, 0.5205006F);
+      setRotation(Left_Arm, 0F, 0F, 0F);
+      Right_Arm = new ModelRenderer(this, 0, 0);
+      Right_Arm.addBox(0F, -1.5F, -1.5F, 3, 10, 3);
+      Right_Arm.setRotationPoint(-7F, 5.5F, 2F);
+      Right_Arm.setTextureSize(64, 32);
+      Right_Arm.mirror = true;
+      setRotation(Right_Arm, 0F, 0F, 0F);
   }
   
   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
@@ -65,8 +66,8 @@ public class ModelFirstMob extends ModelBase
     Left_leg.render(f5);
     Right_leg.render(f5);
     Head.render(f5);
-    Right_Arm.render(f5);
     Left_Arm.render(f5);
+    Right_Arm.render(f5);
   }
   
   private void setRotation(ModelRenderer model, float x, float y, float z)
@@ -76,8 +77,26 @@ public class ModelFirstMob extends ModelBase
     model.rotateAngleZ = z;
   }
   
+  /**
+   * Animace pro moba.
+   * //TODO Rozdíl rotace mezi Techne a Floatem je 57.3
+   */
   public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
   {
+      this.Head.rotateAngleY = (f3/(180F/(float)Math.PI));
+      this.Head.rotateAngleX = (f4/170F/(float)Math.PI);
+      
+      this.Left_leg.rotateAngleX = MathHelper.cos(f * 0.6662F)* 2.0F * f1* 0.5F;
+      this.Left_leg.rotateAngleY = 0.0F;
+      
+      this.Right_leg.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1;
+      this.Right_leg.rotateAngleY = 0.0F;
+      
+      this.Left_Arm.rotateAngleX = MathHelper.cos(f * 0.6662F) * 2.0F * f1 * 0.5F;
+      this.Left_Arm.rotateAngleZ = 0.0F;
+      
+      this.Right_Arm.rotateAngleX = MathHelper.cos(f * 0.6663F + (float)Math.PI) * 2.0F * f1 * 0.5F;
+      this.Right_Arm.rotateAngleZ = 0.0F;
   }
 
 }

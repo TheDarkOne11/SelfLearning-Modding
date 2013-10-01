@@ -35,7 +35,6 @@ public class ArmorSL extends ItemArmor {
      * Textury ostatních èástí jsou uloženy v armorSL_layer_1
      */
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
-        System.out.println(this.getUnlocalizedName() + "/" + Strings.ARMOR_SL_SET_NAMES[2]);
         
         if(this.getUnlocalizedName().indexOf(Strings.ARMOR_SL_SET_NAMES[2]) > 0) {
             return Strings.RESOURCE_PREFIX + Textures.ARMOR_SL_LAYER_2;

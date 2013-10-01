@@ -16,7 +16,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
 public class EntityFirstMob extends EntityMob {
-
+    private static float speed = 0.4F;
+    
     public EntityFirstMob(World par1World) {
         super(par1World);
         this.experienceValue = 10;
@@ -33,6 +34,12 @@ public class EntityFirstMob extends EntityMob {
     
     protected boolean isAIEnabled() {
         return true;
+    }
+    
+    // Rychlost moba
+    public void setAIMoveSpeed(float par1) {
+        super.setAIMoveSpeed(speed);
+        this.setMoveForward(speed);
     }
     
     // Napø. díky tomuto zaène Zombie hoøet
@@ -73,5 +80,5 @@ public class EntityFirstMob extends EntityMob {
     protected void playStepSound(int par1, int par2, int par3, int par4) {
         this.playSound("mog.irongolem.step", 0.15F, 1.0F);
     }
-
+   
 }
