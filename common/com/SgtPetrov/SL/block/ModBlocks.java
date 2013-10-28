@@ -12,6 +12,7 @@ public class ModBlocks {
     public static Block gravityBlock;
     public static Block redstoneGravityBlock;
     public static Block multiTexturedBlock;
+    public static Block onBlockClicked;
 
     public static void init() {
 
@@ -19,18 +20,21 @@ public class ModBlocks {
         gravityBlock = new GravityBlock(Ids.GRAVITY_BLOCK_DEFAULT);
         redstoneGravityBlock = new RedstoneGravityBlock(Ids.REDSTONE_GRAVITY_BLOCK_DEFAULT);
         multiTexturedBlock = new MultiTexturedBlock(Ids.MULTI_TEXTURED_BLOCK_DEFAULT);
+        onBlockClicked = new OnBlockClicked(Ids.ON_BLOCK_CLICKED_DEFAULT);
         
         // Game Registry
         GameRegistry.registerBlock(firstBlock, Strings.FIRST_BLOCK_NAME);
         GameRegistry.registerBlock(gravityBlock, Strings.GRAVITY_BLOCK_NAME);
         GameRegistry.registerBlock(redstoneGravityBlock, Strings.REDSTONE_GRAVITY_BLOCK_NAME);
         GameRegistry.registerBlock(multiTexturedBlock, Strings.MULTI_TEXTURED_BLOCK_NAME);
+        GameRegistry.registerBlock(onBlockClicked, Strings.ON_BLOCK_CLICKED_NAME);
         
         // TMP Language Registry
         LanguageRegistry.addName(firstBlock, "First Block");
         LanguageRegistry.addName(gravityBlock, "Gravity Block");
         LanguageRegistry.addName(redstoneGravityBlock, "Redstone Gravity Block");
         LanguageRegistry.addName(multiTexturedBlock, "Multi Textured Block");
+        LanguageRegistry.addName(onBlockClicked, "On Block Right Clicked");
         
     }
 }

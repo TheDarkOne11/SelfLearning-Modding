@@ -10,6 +10,7 @@ public class Ids {
     public static int GRAVITY_BLOCK_DEFAULT = 1001;
     public static int REDSTONE_GRAVITY_BLOCK_DEFAULT = 1002;
     public static int MULTI_TEXTURED_BLOCK_DEFAULT = 1003;
+    public static int ON_BLOCK_CLICKED_DEFAULT = 1004;
     
     /* Default item ids */
     public static int FIRST_ITEM_DEFAULT = 4000;

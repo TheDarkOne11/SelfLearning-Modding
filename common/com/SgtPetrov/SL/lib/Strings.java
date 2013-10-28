@@ -10,6 +10,7 @@ public class Strings {
     public static final String GRAVITY_BLOCK_NAME = "gravityBlock";
     public static final String REDSTONE_GRAVITY_BLOCK_NAME = "redstoneGravityBlock";
     public static final String MULTI_TEXTURED_BLOCK_NAME = "multiTexturedBlock";
+    public static final String ON_BLOCK_CLICKED_NAME = "onBlockClicked";
     
     /* Mob names */
     public static final String FIRST_MOB_NAME = "firstMob";
