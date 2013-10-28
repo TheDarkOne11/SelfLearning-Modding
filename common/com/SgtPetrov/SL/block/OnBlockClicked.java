@@ -6,6 +6,7 @@ import net.minecraft.world.World;
 /* Pøi kliknutí pravým tlaèítkem se zmìní poèasí na nedeštivo a èas se pøesune na 0. */
 
 public class OnBlockClicked extends BlockSL {
+    public static int setTime = 0;
 
     public OnBlockClicked(int id) {
         super(id, Material.cloth);
@@ -16,10 +17,12 @@ public class OnBlockClicked extends BlockSL {
     public boolean onBlockActivated(World world, int par2, int par3, int par4, EntityPlayer entityPlayer, int par6, float par7, float par8, float par9) 
     {
         if(!world.isDaytime()) {
-            world.setWorldTime(0);
+            entityPlayer.addChatMessage(entityPlayer.username + " set time to " + setTime);
+            world.setWorldTime(setTime);
         }
         
         if(world.isRaining()) {
+            entityPlayer.addChatMessage(entityPlayer.username +" stopped the rain.");
             world.toggleRain();
         }
         return true;

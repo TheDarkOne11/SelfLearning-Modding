@@ -3,6 +3,7 @@ package com.SgtPetrov.SL;
 import net.minecraft.creativetab.CreativeTabs;
 import com.SgtPetrov.SL.block.ModBlocks;
 import com.SgtPetrov.SL.client.model.ModMob;
+import com.SgtPetrov.SL.core.handlers.SLConnectionHandler;
 import com.SgtPetrov.SL.creativeTab.CreativeTabSL;
 import com.SgtPetrov.SL.item.ModItems;
 import com.SgtPetrov.SL.lib.Reference;
@@ -16,6 +17,7 @@ import cpw.mods.fml.common.Mod.PostInit;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod (modid = Reference.MOD_ID, 
@@ -33,6 +35,8 @@ public class BaseFile {
     
     @Init
     public void init(FMLInitializationEvent event) {
+        NetworkRegistry.instance().registerConnectionHandler(new SLConnectionHandler());
+        
         ModBlocks.init();
         
         ModItems.init();
