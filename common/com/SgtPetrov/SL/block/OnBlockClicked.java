@@ -22,7 +22,7 @@ public class OnBlockClicked extends BlockSL {
         }
         
         if(world.isRaining()) {
-            entityPlayer.addChatMessage(entityPlayer.username +" stopped the rain.");
+            entityPlayer.addChatMessage(entityPlayer.username + " stopped the rain.");
             world.toggleRain();
         }
         return true;
